@@ -1,0 +1,54 @@
+
+
+<h1>New Book</h1>
+
+<% if flash[:notice] %>
+  <div class="notice">
+     <%= image_tag("s.jpg", :width => 100, :height => 100)%>
+   <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div></div>
+<% end %>
+
+<%=  form_for :post, url: posts_path  do |f| %> 
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+      this book from being saved:</h2>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+    <%= f.label :authorname %><br>
+    <%= f.text_field :authorname %>
+  </p>
+ <p>
+    <%= f.label :edition %><br>
+    <%= f.text_field :edition  %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+ 
+  <p class="button">
+    <%= submit_tag 'Save Book',:class=>"btn btn-primary"%>
+<%= link_to 'Back', posts_path,:class=>"btn btn-primary" %>
+
+  </p>
+<% end %>
+<%=image_tag("books2.jpg", alt: "books2 Image")%>
+

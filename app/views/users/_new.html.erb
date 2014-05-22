@@ -1,0 +1,40 @@
+
+
+<button class="close" aria-hidden="true" data-dismiss="modal" type="button">×</button>
+
+<h1>Sign Up</h1>
+<%=  form_for @user , url: sign_up_user_path, :authenticity_token => true, :html => { :id => "user_new"}  do |f| %>
+
+  <div class="modal-body">
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+ <div class="form-group">
+    <%= f.label :State %><br />
+    <%= f.text_field :State %>
+  </div>
+  <div class="form-group">
+    <%= f.label :City %><br />
+    <%= f.text_field :City %>
+  </div>
+<div class="form-group">
+    <%= f.label :Phonenumber %><br />
+    <%= f.text_field :Phonenumber %>
+  </div>
+  
+<%= submit_tag 'SignUp',:class=>"btn btn-primary"%>
+
+
+ <%= link_to "Cancel", "#", :class=>"btn btn-primary", data: {dismiss: "modal"} %>
+<% end %>
+</div>
+

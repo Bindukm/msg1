@@ -1,0 +1,38 @@
+
+
+<!--<p class="pa">A book is a set of written, printed, illustrated, or blank sheets, made of ink, paper, parchment, or other materials, usually fastened together to hinge at one side.<br>
+  Book title is <strong><%= @post.title %></strong>
+its written by <strong><%= @post.authorname %></strong> he is a famous author,the edition of this book is <strong>
+<%= @post.edition %></strong>,cost of this book is <strong><%= @post.price %></strong> and this book contain following descriptions <strong><%= @post.description %></strong>
+</p>-->
+<p class="pa">Writing is a system of linguistic symbols which permit one to transmit and conserve information. Writing appears to have developed between the 7th millennium BC and the 4th millennium BC, first in the form of early mnemonic symbols which became a system of ideograms or pictographs through simplification. The oldest known forms of writing were thus primarily logographic in nature. Later syllabic and alphabetic or segmental writing emerged.The book is also linked to the desire of humans to create lasting records. Stones could be the most ancient form of writing, but wood would be the first medium to take the guise of a book.The words biblos and liber first meant "fibre inside of a tree". In Chinese, the character that means book is an image of a tablet of bamboo. Wooden tablets (Rongorongo) were also made on Easter Island.</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+<p>
+   <strong>Authorname:</strong>
+  <%= @post.authorname %>
+</p>
+<p>
+  <strong>Edition:</strong>
+  <%= @post.edition %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @post.price %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<h3>Comments</h3>
+
+<%= render @post.comments %>
+
+<h3>Add a comment:</h3>
+<%= render "comments/form" %>
+<%= link_to 'Edit Post', edit_post_path(@post),:class=>"btn btn-primary" %> 
+<%= link_to 'Back', posts_path,:class=>"btn btn-primary" %>

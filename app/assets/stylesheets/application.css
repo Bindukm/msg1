@@ -1,0 +1,129 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *= require bootstrap.min
+ *= require_self
+ *= require_tree .
+ */
+ 
+ 
+ h1
+ {
+ 	color:brown;
+ 	text-align:center;
+ }
+ .h{
+ 	width: 130px;
+ 	float: left;
+ }
+ h3
+ {
+ 	background-color:Plum ;
+ 	width:200px;
+ 	margin-left:600px;
+ }
+ p
+ {
+ 	text-align:center;
+
+ }
+
+ body
+ {
+ 	
+ 	text-align:center;
+ 	
+ }
+ .footer,.header{
+background-color:MediumPurple;
+height:70px;
+text-align:center;
+color:white;
+font-size:15px;
+top:50px;
+right:5px;
+
+}
+.footer,a{
+color:white;
+}
+
+ 
+ /*.c{
+ 	float:left;
+ 	}*/
+ .page{
+	color:black;
+	background-color:GoldenRod;
+	width:270px;
+	font-size:15px;
+	font-weight:bold;
+	
+	
+}
+.search{
+	
+	color:black;
+    float:left;  
+    margin-top:40px;
+    
+}
+ .b{
+ 		margin-top: 15px;
+ 		padding:10px;
+ 		clear: both;
+ 	}
+ 	p{
+font-size:20px;
+}
+
+.book{
+float:left;
+margin-top:30px;
+}
+ 	.img{
+float:left;
+margin-left:500px;
+top: 100px;
+position: center;
+border: 4px solid black;
+
+}	
+.img1{
+margin-top:80px;
+margin-left:30px;
+}
+
+ .msg{
+
+ 	position:fixed;
+     top:80px;
+ 	font-size: 15px;
+ 	color: black;
+ 	margin-left: 450px;
+ 	background-color: SkyBlue ;
+ 	width:300px;
+ 	border:1px solid black;
+ }
+ 	.pa{
+ 		text-align: justify;
+ 		word-spacing: 5px;
+ 		font-size: 20px;
+ 		padding-left: 2cm;
+ 		padding-right: 2cm;
+ 		padding-top: 1cm;
+ 	}
+
+ #container{
+text-align: center;
+width:1200px;
+padding: 20px 0 10px;
+margin: 0px auto 0;
+background-image: image-url("bgk.jpg");
+}

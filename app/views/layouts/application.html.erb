@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<!--<div class="c">
+	<form name="input" action="http://ebook.com//?s=books" method="get">
+<left> <input type="text" name="user"  placeholder="books">
+<input type="submit" value="Search"  placeholder="books"></left>
+</form> 
+</div>!-->
+
+<head>
+	<title>task5</title>
+	<%= stylesheet_link_tag  "application", media: "all" %>
+	<%= javascript_include_tag "application","data-turbolinks-track" => true %>
+	<%= csrf_meta_tag %>
+</head>
+<body>
+	<div class="header">Book Application
+		
+		<% if current_user %>
+		<%= link_to "Sign out", log_out_path,:class => "btn btn-sm btn-default pull-right "%>
+		<%  elsif (controller_name == "sessions") && (action_name == "new") %>
+		<%= link_to 'Sign Up',  sign_up_path,remote: true, :class => "btn btn-sm btn-default pull-right"   %>
+		<%  elsif (controller_name == "users") && (action_name == ("new")) %>
+		<%= link_to 'Sign In', log_in_path, remote: true,:class => "btn btn-sm btn-default pull-right"   %>  
+		<% else %>
+		<%= link_to 'Sign Up',  sign_up_path, remote: true,:class => "btn btn-sm btn-default pull-right"   %>   
+		<%= link_to 'Sign In', log_in_path, remote: true,:class => "btn btn-sm btn-default pull-right"   %>  
+		<% end %>
+		
+		<div class ="h">
+			<%= image_tag("Book.gif", :width => 120, :height => 70)%>
+		</div>
+		<div class="book">
+			<%= link_to 'Home', root_path, :class=>"btn btn-warning"%>
+			<%= link_to 'New Books', new_post_path, :class=>"btn btn-warning"%><br>
+		</div>
+		<div class ="search">
+			<%= form_tag posts_path,:method=>'get' do %>
+			<%= text_field_tag :search %>
+			<%= submit_tag "Search"%>
+			<% end %></div>
+		</div>
+	</div>
+
+	<div id="container">
+		<div id="product-modal" class="modal"></div>
+		<div class="msg">
+			<% flash.each do |name, msg| %>
+			<button type="button" class="close" aria-hidden="true">&times;</button>
+
+			<%= content_tag :div, msg, :id => "flash#{name}" %>
+			<% end %>
+		</div>
+        <%= yield %>
+	</div>
+	<div class="footer" >
+<a href="#">@company 2014</a><br>
+</div>
+</body>
+</html>
+

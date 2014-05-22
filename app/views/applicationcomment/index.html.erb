@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <% Applicationcomment.all.each do |acomment| %>
+    <tr>
+     <%= acomment.comment %></br>
+      <% acomment.feedbacks.each do |fee| %>
+       <%= fee.feedback %><br/>
+      <% end %>
+
+<%= form_for :feedback, url: applicationcomment_path do |f|%>
+    <%= f.text_field :feedback %>
+    <%= f.submit "Add feedback" %></br>
+  <% end %>
+      </td>
+    </tr>
+  <% end %>
+
+</table>
+  
+  <%= form_for :applicationcomment, url: applicationcomment_index_path  do |f|%>
+    <%= f.text_field :comment %>
+    <%= f.submit "Add comment" %></br>
+  <% end %>

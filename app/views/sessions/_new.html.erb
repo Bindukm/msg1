@@ -1,0 +1,27 @@
+<button class="close" aria-hidden="true" data-dismiss="modal" type="button">×</button>
+<%= image_tag("link1.jpeg", :width => 100, :height => 50)%>
+<%= link_to "Sign in with linkedin", "/auth/linkedin" %><br>
+
+
+<h1>Log in</h1>
+<!--<div class ="n">
+<%= image_tag("name.gif")%>
+</div>-->
+<div class="modal-body">
+<%=  form_for :user, url: log_in_user_path, :authenticity_token => true do |f| %> 
+  <p>
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email %>
+  </p>
+  <p>
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password %>
+  </p>
+  
+
+  <p class="button">
+  	<%= submit_tag 'LogIn',:class=>"btn btn-primary"%></p>
+    <% end %>
+    
+<%= link_to "Cancel", "#", :class=>"btn btn-primary", data: {dismiss: "modal"} %>
+</div>
